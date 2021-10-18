@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 class Recipe(models.Model):
     recipe_id = models.AutoField(primary_key=True)
-    recipe_name = models.CharField(max_length=30, unique=True, error_messages='A recipe with this name already exists!')
+    recipe_name = models.CharField(max_length=30, unique=True, error_messages={'unique': 'A recipe with this name '
+                                                                                         'already exists!'})
     recipe_description = models.CharField(max_length=100, null=True)
     recipe_history = models.CharField(max_length=500, null=True)
     # TODO - recipe type (shake, stir, blend)
@@ -26,3 +27,4 @@ class Quantity(models.Model):
     pieces = models.IntegerField(null=True)
     dashes = models.IntegerField(null=True)
     # TODO - Think more of these
+
