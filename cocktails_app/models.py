@@ -11,6 +11,7 @@ class Recipe(models.Model):
     # TODO - recipe type (shake, stir, blend)
     date_added = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    # TODO - Maybe recipe shoul include ingredient as manytomany field for search purposes
 
 
 class Ingredient(models.Model):
@@ -27,4 +28,5 @@ class Quantity(models.Model):
     pieces = models.IntegerField(null=True)
     dashes = models.IntegerField(null=True)
     # TODO - Think more of these
+
 
