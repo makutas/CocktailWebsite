@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="register-user-modal">
+	<form class="register-user-form" method="POST" action="{% url 'users:register' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+	</form>
+</div>
+{% endbock %}
