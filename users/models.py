@@ -8,3 +8,6 @@ class UserProfile(models.Model):
     user_description = models.CharField(max_length=200, null=True)
     user_avatar = models.ImageField(null=True, blank=True)
     user_uploaded_recipes = models.IntegerField()  # Increment by 1 on upload
+
+    def __str__(self):
+        return f"{self.user.username}"

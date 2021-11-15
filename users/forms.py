@@ -66,5 +66,7 @@ class UserProfileForm(forms.ModelForm):
                 'class': 'form-row',
                 'placeholder': 'User description...',
             }),
-            'user_avatar': forms.ImageField(),  # TODO - CHECK IMAGE FIELD HOW TO
+            'user_avatar': forms.ClearableFileInput(attrs={
+                'class': 'form-row',
+            }),
         }
