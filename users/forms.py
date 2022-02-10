@@ -44,7 +44,7 @@ class RegisterUserForm(UserCreationForm):
             'password2',
         )
 
-    # TODO - email required (check stuff how to change pass and forget)
+    # TODO - change login with username to login with email, forgot pass option
 
     def save(self, commit=True):
         user = super(RegisterUserForm, self).save(commit=False)
