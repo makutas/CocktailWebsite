@@ -20,4 +20,4 @@ def register_new_user(request):
         user_profile_form = UserProfileForm()
 
     context = {'form': form, 'user_profile_form': user_profile_form}
-    return render(request, "auth/register.html", context)
+    return render(request, "registration/register.html", context)

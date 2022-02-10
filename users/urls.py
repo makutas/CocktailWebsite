@@ -9,8 +9,8 @@ urlpatterns = [
     # ------------------------------------------------REGISTER NEW USER-------------------------------------------------
     path(r'register/', views.register_new_user, name='register'),
     # -----------------------------------------------------LOGIN--------------------------------------------------------
-    path(r'login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path(r'login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     # -----------------------------------------------------LOGOUT-------------------------------------------------------
-    path(r'logout/', auth_views.LogoutView.as_view(template_name='auth/logout.html'), name='logout'),
+    path(r'logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     # TODO - baigti tvarkyti URLS (registration??? i templates)
 ]

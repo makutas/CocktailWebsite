@@ -5,6 +5,6 @@ from django.contrib.admin.views.decorators import staff_member_required
 from .models import *
 
 
-@login_required(login_url='login')
+@login_required(login_url='users:login')
 def index(request):
     return render(request, "index.html")
