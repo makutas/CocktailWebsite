@@ -6,7 +6,7 @@ from .forms import *
 
 def register_new_user(request):
     if request.method == 'POST':
-        form = RegisterUserForm(data=request.POST)
+        form = CreateUserForm(data=request.POST)
         user_profile_form = UserProfileForm(data=request.POST)
 
         if form.is_valid() and user_profile_form.is_valid():
@@ -17,7 +17,7 @@ def register_new_user(request):
             login(request, new_user)
             return redirect('/')
     else:
-        form = RegisterUserForm()
+        form = CreateUserForm()
         user_profile_form = UserProfileForm()
 
     context = {

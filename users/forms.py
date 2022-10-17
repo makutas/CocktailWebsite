@@ -8,7 +8,7 @@ from .models import UserProfile
 
 
 # ---------------------------------------------------- CREATE USER -----------------------------------------------------
-class RegisterUserForm(UserCreationForm):
+class CreateUserForm(UserCreationForm):
     username_validator = UnicodeUsernameValidator()
     error_messages = {
         'unique': 'Username already exists!',
@@ -52,7 +52,7 @@ class RegisterUserForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
     def save(self, commit=True):
-        user = super(RegisterUserForm, self).save(commit=False)
+        user = super(CreateUserForm, self).save(commit=False)
         user.username = self.cleaned_data['username']
         if commit:
             user.save()
