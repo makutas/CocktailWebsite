@@ -3,11 +3,8 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    user_description = models.CharField(max_length=200, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_profile = models.AutoField(primary_key=True)
+    user_description = models.CharField(max_length=200, null=True, blank=True)
     user_avatar = models.ImageField(null=True, blank=True)
-    user_uploaded_recipes = models.IntegerField()  # Increment by 1 on upload
-
-    def __str__(self):
-        return f"{self.user.username}"
+    user_uploaded_recipes = models.IntegerField()
